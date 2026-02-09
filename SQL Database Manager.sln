@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SQL Database Manager", "SQL Data Manager\SQL Database Manager.vbproj", "{67905656-CCD6-4651-A30C-9707471BC543}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67905656-CCD6-4651-A30C-9707471BC543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67905656-CCD6-4651-A30C-9707471BC543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67905656-CCD6-4651-A30C-9707471BC543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67905656-CCD6-4651-A30C-9707471BC543}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61CAEFC6-28F1-4CCD-A3FF-18B3FFA025B4}
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022$/SQL\u0020Data\u0020Manager\u0022,\u0020XUGAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = SQL\u0020Data\u0020Manager\\SQL\u0020Database\u0020Manager.vbproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = SQL\u0020Data\u0020Manager\\
+	EndGlobalSection
+EndGlobal

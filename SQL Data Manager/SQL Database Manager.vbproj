@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67905656-CCD6-4651-A30C-9707471BC543}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SQL_Database_Manager.My.MyApplication</StartupObject>
+    <RootNamespace>SQL_Database_Manager</RootNamespace>
+    <AssemblyName>SQL Database Manager</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SQL Database Manager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SQL Database Manager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\DataManager.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DM_AddTable.Designer.vb">
+      <DependentUpon>DM_AddTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_AddTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_DataView.Designer.vb">
+      <DependentUpon>DM_DataView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_DataView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_GenerateCodeOptions.Designer.vb">
+      <DependentUpon>DM_GenerateCodeOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_GenerateCodeOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_ManageRelationships.Designer.vb">
+      <DependentUpon>DM_ManageRelationships.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_ManageRelationships.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_OrganizeMRU.designer.vb">
+      <DependentUpon>DM_OrganizeMRU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_OrganizeMRU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_Global.vb" />
+    <Compile Include="DM_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_Main.Designer.vb">
+      <DependentUpon>DM_Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_Module1.vb" />
+    <Compile Include="DM_ObjectList.Designer.vb">
+      <DependentUpon>DM_ObjectList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_ObjectList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_Relationships.Designer.vb">
+      <DependentUpon>DM_Relationships.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_Relationships.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_Search.Designer.vb">
+      <DependentUpon>DM_Search.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_Search.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_SearchReplace.Designer.vb">
+      <DependentUpon>DM_SearchReplace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_SearchReplace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_TableDesigner.Designer.vb">
+      <DependentUpon>DM_TableDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_TableDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_ScriptEditor.Designer.vb">
+      <DependentUpon>DM_ScriptEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_ScriptEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKTable.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global.vb" />
+    <Compile Include="DM_Theme.designer.vb">
+      <DependentUpon>DM_Theme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_Theme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib.vb" />
+    <Compile Include="Logo.designer.vb">
+      <DependentUpon>Logo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Logo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DM_Tips.designer.vb">
+      <DependentUpon>DM_Tips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_Tips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramUpdater.vb" />
+    <Compile Include="RegistryEditor.designer.vb">
+      <DependentUpon>RegistryEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistryEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_AddTable.resx">
+      <DependentUpon>DM_AddTable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_DataView.resx">
+      <DependentUpon>DM_DataView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_GenerateCodeOptions.resx">
+      <DependentUpon>DM_GenerateCodeOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_ManageRelationships.resx">
+      <DependentUpon>DM_ManageRelationships.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_ObjectList.resx">
+      <DependentUpon>DM_ObjectList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_OrganizeMRU.resx">
+      <DependentUpon>DM_OrganizeMRU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_Main.resx">
+      <DependentUpon>DM_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_Relationships.resx">
+      <DependentUpon>DM_Relationships.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_Search.resx">
+      <DependentUpon>DM_Search.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_SearchReplace.resx">
+      <DependentUpon>DM_SearchReplace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_TableDesigner.resx">
+      <DependentUpon>DM_TableDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_ScriptEditor.resx">
+      <DependentUpon>DM_ScriptEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_Theme.resx">
+      <DependentUpon>DM_Theme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logo.resx">
+      <DependentUpon>Logo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DM_Tips.resx">
+      <DependentUpon>DM_Tips.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistryEditor.resx">
+      <DependentUpon>RegistryEditor.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data Viewer.ico" />
+    <None Include="Resources\DataManager.ico" />
+    <None Include="Resources\PreviewBackground.bmp" />
+    <None Include="Resources\Data Viewer.ico" />
+    <None Include="Resources\LastRecord.ico" />
+    <None Include="Resources\FirstRecord.ico" />
+    <None Include="Resources\Data Table.ico" />
+    <None Include="Resources\database.ico" />
+    <None Include="Resources\Database.bmp" />
+    <None Include="Resources\Table.ico" />
+    <None Include="Resources\SQLEditor.ico" />
+    <None Include="Resources\SQLBuilder.ico" />
+    <None Include="Resources\SQL.ico" />
+    <None Include="Resources\Key.bmp" />
+    <None Include="Resources\View.bmp" />
+    <None Include="Resources\SQLQuery.bmp" />
+    <None Include="Resources\Pointer.bmp" />
+    <None Include="Resources\Index.bmp" />
+    <None Include="Resources\DataTable.bmp" />
+    <None Include="Resources\Question.bmp" />
+    <None Include="Resources\Information.bmp" />
+    <None Include="Resources\Exclamation.bmp" />
+    <None Include="Resources\Critical.bmp" />
+    <None Include="Resources\SiriusLogo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
