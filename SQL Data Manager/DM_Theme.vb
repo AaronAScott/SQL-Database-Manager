@@ -215,6 +215,12 @@
 
 		If Not f Is frmMain Then f.BackColor = bc
 
+		' Set the MsgBox font and color
+
+		MsgBoxTheme.FontSize = Choose(ProgramColorTheme(ThemeItem.FontNumber), 0, 12)
+		MsgBoxTheme.BackColor = Choose(ProgramColorTheme(ThemeItem.BackgroundColorNumber), SystemColors.Window, Color.FromArgb(255, 182, 189, 255), Color.Tan)
+		MsgBoxTheme.ForeColor = Choose(ProgramColorTheme(ThemeItem.TextColorNumber), Color.Black, Color.DarkBlue, Color.DarkGoldenrod, Color.White)
+
 		' Set the background color of certain controls on the form.
 
 		For Each c In f.Controls

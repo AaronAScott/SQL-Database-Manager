@@ -44,7 +44,7 @@ Public Class frmDataView
 		' If the window message was to move/resize the window, restore it to where
 		' and now it was.
 
-		If m.Msg = WM_WINDOWPOSCHANGED Then GetSavedLayout(lObjectName)
+		If m.Msg = &H47 Then GetSavedLayout(lObjectName) ' WM_WINDOWPOSCHANGED
 
 	End Sub
 	'**********************************************************

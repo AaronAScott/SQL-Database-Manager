@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Provides ability to create, open or alter SQL databases.")> 
 <Assembly: AssemblyCompany("Sirius Software")> 
 <Assembly: AssemblyProduct("SQL Data Manager")>
-<Assembly: AssemblyCopyright("Copyright ©  2017-2025 Sirius Software All Rights Reserved")>
+<Assembly: AssemblyCopyright("Copyright ©  2017-2026 Sirius Software All Rights Reserved")>
 <Assembly: AssemblyTrademark("Sirius Software")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.1.3.2")>
-<Assembly: AssemblyFileVersion("2.1.3.2")>
+<Assembly: AssemblyVersion("2.1.3.3")>
+<Assembly: AssemblyFileVersion("2.1.3.3")>
