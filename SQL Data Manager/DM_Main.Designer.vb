@@ -61,6 +61,8 @@ Partial Class frmMain
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
 		Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+		Me.mnuViewReadMe = New System.Windows.Forms.ToolStripMenuItem()
+		Me.mnuViewLicense = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MenuStrip1.SuspendLayout()
 		Me.StatusStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -276,7 +278,7 @@ Partial Class frmMain
 		'
 		'mnuHelp
 		'
-		Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAbout})
+		Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAbout, Me.mnuViewReadMe, Me.mnuViewLicense})
 		Me.mnuHelp.Name = "mnuHelp"
 		Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
 		Me.mnuHelp.Text = "&Help"
@@ -308,6 +310,18 @@ Partial Class frmMain
 		'OpenFileDialog1
 		'
 		Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+		'
+		'mnuViewReadMe
+		'
+		Me.mnuViewReadMe.Name = "mnuViewReadMe"
+		Me.mnuViewReadMe.Size = New System.Drawing.Size(232, 22)
+		Me.mnuViewReadMe.Text = "View &ReadMe"
+		'
+		'mnuViewLicense
+		'
+		Me.mnuViewLicense.Name = "mnuViewLicense"
+		Me.mnuViewLicense.Size = New System.Drawing.Size(232, 22)
+		Me.mnuViewLicense.Text = "View &License"
 		'
 		'frmMain
 		'
@@ -369,4 +383,6 @@ Partial Class frmMain
     Friend WithEvents mnuRelationships As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuGenerateCommands As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FontDialog1 As FontDialog
+	Friend WithEvents mnuViewReadMe As ToolStripMenuItem
+	Friend WithEvents mnuViewLicense As ToolStripMenuItem
 End Class

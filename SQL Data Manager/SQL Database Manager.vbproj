@@ -80,6 +80,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -103,7 +104,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.designer.vb">
+    <Compile Include="About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
     <Compile Include="About.vb">
@@ -132,6 +133,12 @@
       <DependentUpon>DM_ManageRelationships.vb</DependentUpon>
     </Compile>
     <Compile Include="DM_ManageRelationships.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DM_MDViewer.Designer.vb">
+      <DependentUpon>DM_MDViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DM_MDViewer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DM_OrganizeMRU.designer.vb">
@@ -202,6 +209,9 @@
     <Compile Include="Logo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MarkdownViewer.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MessageBox.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -249,6 +259,9 @@
     <EmbeddedResource Include="DM_ManageRelationships.resx">
       <DependentUpon>DM_ManageRelationships.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DM_MDViewer.resx">
+      <DependentUpon>DM_MDViewer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DM_ObjectList.resx">
       <DependentUpon>DM_ObjectList.vb</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +306,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="LICENSE.md" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -307,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data Viewer.ico" />
+    <None Include="README.md" />
     <None Include="Resources\DataManager.ico" />
     <None Include="Resources\PreviewBackground.bmp" />
     <None Include="Resources\Data Viewer.ico" />

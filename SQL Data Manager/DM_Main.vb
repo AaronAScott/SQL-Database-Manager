@@ -1,7 +1,6 @@
 ﻿Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
-Imports System.Data.SqlClient
+Imports System.IO
 Friend Class frmMain
 	Inherits System.Windows.Forms.Form
 	'*******************************************************************
@@ -63,7 +62,7 @@ Friend Class frmMain
 
 		'Get the server name.  The default is the old 2012 version of SQL Server Express.
 
-		ServerName = "(LocalDB)\" & GetSetting("SiriusSoftwareGlobal", "SQLServer", "InstanceName", "v11.0")
+		ServerName = "(LocalDB)\MSSQLLocalDB"
 
 		' Allow the MDI child forms to resize, now.  This would have been
 		' turned off during the resizing of this form on startup.
@@ -328,9 +327,47 @@ Friend Class frmMain
 	'
 	'*******************************************************************
 	Private Sub About_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuAbout.Click
-		About.Picture1.Image = Me.Icon.ToBitmap
 		About.ShowDialog()
 	End Sub
+	'***********************************************************************
+
+	' The View Readme menu option is selected.
+
+	'***********************************************************************
+	Private Sub mnuViewReadme_Click(sender As Object, e As EventArgs) Handles mnuViewReadMe.Click
+
+		' Create a viwer.  If the user sets the "EditMDFiles" value, using the Control Table Editor,
+		' to "True", they will be able to both view and edit .md files.
+
+		Dim f As New frmMDViewer
+		Dim zx As String = My.Application.Info.DirectoryPath & "\Readme.md"
+		f.LoadFile(zx)
+		f.Text = "Viewing " & Path.GetFileName(zx)
+
+		f.EnableEditing = CBool(GetSetting("Sirius" & SRep(ProgramName, 1, " ", ""), "Settings", "EditMDFiles", "False"))
+		f.ShowDialog()
+
+	End Sub
+	'***********************************************************************
+
+	' The View licenses menu option is selected.
+
+	'***********************************************************************
+	Private Sub mnuViewLicense_Click(sender As Object, e As EventArgs) Handles mnuViewLicense.Click
+
+		' Create a viwer.  If the user sets the "EditMDFiles" value, using the Control Table Editor,
+		' to "True", they will be able to both view and edit .md files.
+
+		Dim f As New frmMDViewer
+		Dim zx As String = My.Application.Info.DirectoryPath & "\license.md"
+		f.LoadFile(zx)
+		f.Text = "Viewing " & Path.GetFileName(zx)
+
+		f.EnableEditing = CBool(GetSetting("Sirius" & SRep(ProgramName, 1, " ", ""), "Settings", "EditMDFiles", "False"))
+		f.Show()
+
+	End Sub
+
 
 	'*******************************************************************
 

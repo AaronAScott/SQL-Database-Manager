@@ -223,11 +223,11 @@ Module GlobalModule
 	Public Const pi As Double = 3.14159
 
 	Public Class Dependency
-		Public Name As String
+		Public FolderName As String
 		Public ObjectType As String
 		Public FileToCopy As String
 		Public Sub New(NameValue As String, Type As String, Optional FileName As String = "")
-			Name = NameValue
+			FolderName = NameValue
 			ObjectType = Type
 			FileToCopy = FileName
 		End Sub
