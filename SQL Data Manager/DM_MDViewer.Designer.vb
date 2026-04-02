@@ -92,7 +92,6 @@ Partial Class frmMDViewer
 		'
 		'TextBox1
 		'
-		Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.TextBox1.Location = New System.Drawing.Point(0, 0)
 		Me.TextBox1.Multiline = True
@@ -106,7 +105,6 @@ Partial Class frmMDViewer
 		'
 		Me.MarkdownViewer1.AutoScroll = True
 		Me.MarkdownViewer1.BackColor = System.Drawing.SystemColors.Window
-		Me.MarkdownViewer1.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.MarkdownViewer1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.MarkdownViewer1.Location = New System.Drawing.Point(0, 0)
 		Me.MarkdownViewer1.Name = "MarkdownViewer1"

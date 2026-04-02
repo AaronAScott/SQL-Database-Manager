@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Drawing
+Imports System.Text
 Imports System.Text.RegularExpressions
 
 <ToolboxItem(True)>
@@ -92,16 +93,29 @@ Public Class MarkdownViewer
 	Public Sub New()
 		Me.DoubleBuffered = True
 		Me.AutoScroll = True
-
-		Dim baseFont = Me.Font
-		_fontBody = baseFont
-		_fontBullet = baseFont
-		_fontHeader1 = New Font(baseFont.FontFamily, baseFont.Size + 6, FontStyle.Bold)
-		_fontHeader2 = New Font(baseFont.FontFamily, baseFont.Size + 3, FontStyle.Bold)
-		_fontHeader3 = New Font(baseFont.FontFamily, baseFont.Size + 1, FontStyle.Bold)
-		_fontAnchor = New Font(baseFont, FontStyle.Underline)
+		Me.Font = MyBase.Font
 	End Sub
+	'*******************************************************************
 
+	' The font property.
+
+	'*******************************************************************
+	Public Overrides Property Font As Font
+		Get
+			Return MyBase.Font
+		End Get
+		Set(value As Font)
+
+			Dim baseFont = value
+			_fontBody = baseFont
+			_fontBullet = baseFont
+			_fontHeader1 = New Font(baseFont.FontFamily, baseFont.Size + 6, FontStyle.Bold)
+			_fontHeader2 = New Font(baseFont.FontFamily, baseFont.Size + 3, FontStyle.Bold)
+			_fontHeader3 = New Font(baseFont.FontFamily, baseFont.Size + 1, FontStyle.Bold)
+			_fontAnchor = New Font(baseFont, FontStyle.Underline)
+			RecalculateLayout()
+		End Set
+	End Property
 	'*******************************************************************
 
 	' Function to return the font for displaying a line.
@@ -134,7 +148,7 @@ Public Class MarkdownViewer
 	'*******************************************************************
 	Public Sub LoadFile(path As String)
 		Try
-			Dim text = IO.File.ReadAllText(path)
+			Dim text = IO.File.ReadAllText(path, Encoding.Default)
 			mRawText = text
 			ParseMarkdown(text)
 			RecalculateLayout()
@@ -294,7 +308,7 @@ Public Class MarkdownViewer
 			Else
 				runs.Add(New InlineRun(part, FontStyle.Regular))
 			End If
-		Next
+		Next part
 
 		Return runs
 
@@ -348,6 +362,7 @@ Public Class MarkdownViewer
 
 	'*******************************************************************
 	Private Function WrapLine(line As RenderLine, g As Graphics, maxWidth As Integer) As List(Of RenderLine)
+
 		Dim wrapped As New List(Of RenderLine)
 		Dim currentRuns As New List(Of InlineRun)
 		Dim currentWidth As Integer = 0
@@ -386,8 +401,8 @@ Public Class MarkdownViewer
 
 				currentRuns.Add(New InlineRun(token, run.Style))
 				currentWidth += tokenWidth
-			Next
-		Next
+			Next token
+		Next run
 
 		' Final line
 		If currentRuns.Count > 0 Then
@@ -408,14 +423,14 @@ Public Class MarkdownViewer
 	Protected Overrides Sub OnResize(e As EventArgs)
 		MyBase.OnResize(e)
 
-		If Not DesignMode AndAlso _parsedLines IsNot Nothing AndAlso _parsedLines.Count > 0 Then
+		If Not DesignMode AndAlso IsHandleCreated AndAlso _parsedLines IsNot Nothing AndAlso _parsedLines.Count > 0 Then
+
 			BeginInvoke(Sub()
 						  RecalculateLayout()
 						  Invalidate()
 					  End Sub)
 		End If
 	End Sub
-
 	'*******************************************************************
 
 	' Hit testing and scrolling

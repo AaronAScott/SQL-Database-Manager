@@ -22,7 +22,22 @@ Public Class frmMDViewer
 
 		If mEditing Then TextBox1.Text = MarkdownViewer1.RawText
 		TextBox1.Font = New Font("Arial", 12)
+		MarkdownViewer1.Font = TextBox1.Font
+	End Sub
+	'***********************************************************************
 
+	' The form is resized.
+
+	'***********************************************************************
+	Private Sub Form_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+		MarkdownViewer1.Left = 0
+		MarkdownViewer1.Top = MenuStrip1.Height
+		MarkdownViewer1.Width = Me.ClientSize.Width
+		MarkdownViewer1.Height = Me.ClientSize.Height - MenuStrip1.Height
+		TextBox1.Left = 0
+		TextBox1.Top = MenuStrip1.Height
+		TextBox1.Width = Me.ClientSize.Width
+		TextBox1.Height = Me.ClientSize.Height - MenuStrip1.Height
 	End Sub
 	'***********************************************************************
 
